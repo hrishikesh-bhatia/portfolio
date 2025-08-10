@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Text, Float, Html, OrbitControls } from '@react-three/drei';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import * as THREE from 'three';
 
 export const ContactScene = () => {
