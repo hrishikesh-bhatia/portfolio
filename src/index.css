@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cosmic Dark Theme */
+    --background: 230 25% 5%;
+    --foreground: 200 50% 95%;
+
+    --card: 235 20% 8%;
+    --card-foreground: 200 50% 95%;
+
+    --popover: 235 20% 8%;
+    --popover-foreground: 200 50% 95%;
+
+    --primary: 275 100% 65%;
+    --primary-foreground: 230 25% 5%;
+
+    --secondary: 190 100% 60%;
+    --secondary-foreground: 230 25% 5%;
+
+    --muted: 235 15% 15%;
+    --muted-foreground: 200 20% 65%;
+
+    --accent: 45 100% 70%;
+    --accent-foreground: 230 25% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 235 15% 20%;
+    --input: 235 15% 15%;
+    --ring: 275 100% 65%;
+
+    --radius: 0.75rem;
+
+    /* Cosmic Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(275 100% 65%), hsl(190 100% 60%));
+    --gradient-nebula: linear-gradient(180deg, hsl(230 25% 5%), hsl(245 30% 10%));
+    --gradient-aurora: linear-gradient(90deg, hsl(275 100% 65%), hsl(190 100% 60%), hsl(45 100% 70%));
+    
+    /* Glow Effects */
+    --glow-primary: 0 0 20px hsl(275 100% 65% / 0.5);
+    --glow-secondary: 0 0 20px hsl(190 100% 60% / 0.5);
+    --glow-accent: 0 0 20px hsl(45 100% 70% / 0.5);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+    cursor: none;
+  }
+  
+  /* Smooth scroll for webkit browsers */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .cosmic-glow {
+    box-shadow: var(--glow-primary);
+    transition: var(--transition-smooth);
+  }
+  
+  .cosmic-glow:hover {
+    box-shadow: var(--glow-primary), 0 0 40px hsl(275 100% 65% / 0.3);
+  }
+  
+  .cosmic-text {
+    background: var(--gradient-cosmic);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .floating-card {
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card) / 0.8);
+    transition: var(--transition-smooth);
+  }
+  
+  .floating-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--glow-secondary);
+    border-color: hsl(var(--secondary));
+  }
+  
+  .cosmic-button {
+    background: var(--gradient-cosmic);
+    border: none;
+    color: hsl(var(--primary-foreground));
+    transition: var(--transition-smooth);
+  }
+  
+  .cosmic-button:hover {
+    transform: scale(1.05);
+    box-shadow: var(--glow-primary);
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .transform-preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
