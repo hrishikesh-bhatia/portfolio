@@ -33,7 +33,7 @@ export const AboutScene = () => {
           {/* Title */}
           <Text
             fontSize={1}
-            position={[0, 1.5, 0]}
+            position={[0, 1, 0]}
             color="#a855f7"
             anchorX="center"
             anchorY="middle"
@@ -43,7 +43,7 @@ export const AboutScene = () => {
           
           {/* About content using HTML for better text rendering */}
           <Html
-            position={[0, 0, 0]}
+            position={[0, -0.8, 0]}
             center
             distanceFactor={4}
             transform

@@ -64,7 +64,7 @@ export const ContactScene = () => {
       
       <group ref={consoleRef}>
         <Text
-          fontSize={1.2}
+          fontSize={1}
           position={[0, 2.5, 0]}
           color="#a855f7"
           anchorX="center"
@@ -84,7 +84,7 @@ export const ContactScene = () => {
           </mesh>
           
           <Html
-            position={[0, 0, 0]}
+            position={[0, -0.8, 0]}
             center
             distanceFactor={4}
             transform
