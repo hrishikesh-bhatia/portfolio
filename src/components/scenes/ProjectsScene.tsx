@@ -15,12 +15,12 @@ const projects = [
   },
   {
     id: 2,
-    title: '3D Portfolio Website',
-    description: 'Interactive 3D portfolio built with React Three Fiber',
-    tech: ['React', 'Three.js', 'TypeScript', 'Blender'],
+    title: 'SAAS Application',
+    description: 'Saas Aplication with a high focus on customer conversion',
+    tech: ['React', 'Javascript', 'TypeScript', 'Nodejs'],
     color: '#06b6d4',
     position: [0, 0, 0] as const,
-    url: 'https://code-mate-pi.vercel.app/',
+    url: 'https://ashy-saas-sample.vercel.app/',
   },
   {
     id: 3,
